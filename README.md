@@ -1,8 +1,8 @@
-# go-dmsoft
-大漠是付费插件，不充值无法使用！
+# go-dmsoft-willpw
+项目克隆于 github.com/qianniancn/go-dmsoft 修改
 
 ## 安装
-`go get -u github.com/qianniancn/go-dmsoft`
+`go get -u github.com/willpw/go-dmsoft-willpw`
 
 ## 注意事项
 由于大漠插件是win32的Dll，所以在windows64位运行和编译的时候需要设置环境变量。
