@@ -15,6 +15,7 @@ package dmsoft
 // string FindStringEx(hwnd, addr_range, string_value,type,step,multi_thread,mode)
 // string FloatToData(value)
 // long FreeProcessMemory(hwnd)
+
 func (com *Dmsoft) GetCommandLine(hwnd int) string {
 	ret, _ := com.dm.CallMethod("GetCommandLine", hwnd)
 	defer ret.Clear()
@@ -26,29 +27,94 @@ func (com *Dmsoft) GetCommandLine(hwnd int) string {
 // LONGLONG GetRemoteApiAddress(hwnd,base_addr,fun_name)
 // long Int64ToInt32(value)
 // string IntToData(value,type)
+
 func (com *Dmsoft) OpenProcess(pid int) int {
 	ret, _ := com.dm.CallMethod("OpenProcess", pid)
 	defer ret.Clear()
 	return int(ret.Val)
 }
+
 func (com *Dmsoft) ReadData(hwnd int, addr string, le int) string {
 	ret, _ := com.dm.CallMethod("ReadData", hwnd, addr, le)
 	defer ret.Clear()
 	return ret.ToString()
 }
 
-// string ReadDataAddr(hwnd,addr,len)
-// long ReadDataAddrToBin(hwnd,addr,len)
-// long ReadDataToBin(hwnd,addr,len)
-// double ReadDouble(hwnd,addr)
-// double ReadDoubleAddr(hwnd,addr)
-// float ReadFloat(hwnd,addr)
-// float ReadFloatAddr(hwnd,addr)
-// LONGLONG ReadInt(hwnd,addr,type)
-// LONGLONG ReadIntAddr(hwnd,addr,type)
-// string ReadString(hwnd,addr,type,len)
-// string ReadStringAddr(hwnd,addr,type,len)
-// long SetMemoryFindResultToFile(file)
+func (com *Dmsoft) ReadDataAddr(hwnd int, addr int64, le int) string {
+	ret, _ := com.dm.CallMethod("ReadDataAddr", hwnd, addr, le)
+	defer ret.Clear()
+	return ret.ToString()
+}
+
+func (com *Dmsoft) ReadDataAddrToBin(hwnd int, addr int64, le int) int {
+	ret, _ := com.dm.CallMethod("ReadDataAddrToBin", hwnd, addr, le)
+	defer ret.Clear()
+	return int(ret.Val)
+}
+
+func (com *Dmsoft) ReadDataToBin(hwnd int, addr string, le int) int {
+	ret, _ := com.dm.CallMethod("ReadDataToBin", hwnd, addr, le)
+	defer ret.Clear()
+	return int(ret.Val)
+}
+
+func (com *Dmsoft) ReadDouble(hwnd int, addr string) float64 {
+	ret, _ := com.dm.CallMethod("ReadDouble", hwnd, addr)
+	defer ret.Clear()
+	return ret.Value().(float64)
+}
+
+func (com *Dmsoft) ReadDoubleAddr(hwnd int, addr int64) float64 {
+	ret, _ := com.dm.CallMethod("ReadDoubleAddr", hwnd, addr)
+	defer ret.Clear()
+	return ret.Value().(float64)
+}
+
+func (com *Dmsoft) ReadFloat(hwnd int, addr string) float32 {
+	ret, _ := com.dm.CallMethod("ReadFloat", hwnd, addr)
+	defer ret.Clear()
+	return ret.Value().(float32)
+}
+
+func (com *Dmsoft) ReadFloatAddr(hwnd int, addr int64) float32 {
+	ret, _ := com.dm.CallMethod("ReadFloatAddr", hwnd, addr)
+	defer ret.Clear()
+	return ret.Value().(float32)
+}
+
+func (com *Dmsoft) ReadInt(hwnd int, addr string, typ int) int64 {
+	ret, _ := com.dm.CallMethod("ReadInt", hwnd, addr, typ)
+	defer ret.Clear()
+	return ret.Val
+
+}
+
+func (com *Dmsoft) ReadIntAddr(hwnd int, addr int64, typ int) int64 {
+	ret, _ := com.dm.CallMethod("ReadIntAddr", hwnd, addr, typ)
+	defer ret.Clear()
+	return ret.Val
+
+}
+
+func (com *Dmsoft) ReadString(hwnd int, addr string, typ, le int) string {
+	ret, _ := com.dm.CallMethod("ReadString", hwnd, addr, typ, le)
+	defer ret.Clear()
+	return ret.ToString()
+}
+
+func (com *Dmsoft) ReadStringAddr(hwnd int, addr int64, typ, le int) string {
+	ret, _ := com.dm.CallMethod("ReadStringAddr", hwnd, addr, typ, le)
+	defer ret.Clear()
+	return ret.ToString()
+}
+
+func (com *Dmsoft) SetMemoryFindResultToFile(file string) int {
+	ret, _ := com.dm.CallMethod("SetMemoryFindResultToFile", file)
+	defer ret.Clear()
+	return int(ret.Val)
+
+}
+
 func (com *Dmsoft) SetMemoryHwndAsProcessId(en int) int {
 	ret, _ := com.dm.CallMethod("SetMemoryHwndAsProcessId", en)
 	defer ret.Clear()
@@ -57,24 +123,103 @@ func (com *Dmsoft) SetMemoryHwndAsProcessId(en int) int {
 
 // string StringToData(value,type)
 // long TerminateProcess(pid)
-// LONGLONG VirtualAllocEx(hwnd,addr,size,type)
-// long VirtualFreeEx(hwnd,addr)
-// long VirtualProtectEx(hwnd,addr,size,type,old_protect)
-// string VirtualQueryEx(hwnd,addr,pmbi)
-func (com *Dmsoft) WriteData(hwnd int, addr, data string) int {
-	ret, _ := com.dm.CallMethod("WriteData", hwnd, addr, data)
+
+func (com *Dmsoft) VirtualAllocEx(hwnd int, addr int64, size, typ int) int64 {
+	ret, _ := com.dm.CallMethod("VirtualAllocEx", hwnd, addr, size, typ)
+	defer ret.Clear()
+	return ret.Val
+}
+
+func (com *Dmsoft) VirtualFreeEx(hwnd int, addr int64) int {
+	ret, _ := com.dm.CallMethod("VirtualFreeEx", hwnd, addr)
 	defer ret.Clear()
 	return int(ret.Val)
 }
 
-// long WriteDataAddr(hwnd,addr,data)
-// long WriteDataAddrFromBin(hwnd,addr,data,len)
-// long WriteDataFromBin(hwnd,addr,data,len)
-// long WriteDouble(hwnd,addr,v)
-// long WriteDoubleAddr(hwnd,addr,v)
-// long WriteFloat(hwnd,addr,v)
-// long WriteFloatAddr(hwnd,addr,v)
-// long WriteInt(hwnd,addr,type,v)
-// long WriteIntAddr(hwnd,addr,type,v)
-// long WriteString(hwnd,addr,type,v)
-// long WriteStringAddr(hwnd,addr,type,v)
+func (com *Dmsoft) VirtualProtectEx(hwnd int, addr int64, size, typ, oldProtect int) int {
+	ret, _ := com.dm.CallMethod("VirtualProtectEx", hwnd, addr, size, typ, oldProtect)
+	defer ret.Clear()
+	return int(ret.Val)
+}
+
+func (com *Dmsoft) VirtualQueryEx(hwnd int, addr int64, pmbi int) string {
+	ret, _ := com.dm.CallMethod("VirtualQueryEx", hwnd, addr, pmbi)
+	defer ret.Clear()
+	return ret.ToString()
+
+}
+
+func (com *Dmsoft) WriteData(hwnd int, addr, data string) int {
+	ret, _ := com.dm.CallMethod("WriteData", hwnd, addr, data)
+	defer ret.Clear()
+	return int(ret.Val)
+
+}
+
+func (com *Dmsoft) WriteDataAddr(hwnd int, addr, data string) int {
+	ret, _ := com.dm.CallMethod("WriteDataAddr", hwnd, addr, data)
+	defer ret.Clear()
+	return int(ret.Val)
+
+}
+func (com *Dmsoft) WriteDataAddrFromBin(hwnd int, addr int64, data, le int) int {
+	ret, _ := com.dm.CallMethod("WriteDataAddrFromBin", hwnd, addr, data, le)
+	defer ret.Clear()
+	return int(ret.Val)
+
+}
+func (com *Dmsoft) WriteDataFromBin(hwnd int, addr string, data, le int) int {
+	ret, _ := com.dm.CallMethod("WriteDataFromBin", hwnd, addr, data, le)
+	defer ret.Clear()
+	return int(ret.Val)
+
+}
+func (com *Dmsoft) WriteDouble(hwnd int, addr string, v float64) int {
+	ret, _ := com.dm.CallMethod("WriteDouble", hwnd, addr, v)
+	defer ret.Clear()
+	return int(ret.Val)
+
+}
+
+func (com *Dmsoft) WriteDoubleAddr(hwnd int, addr int64, v float64) int {
+	ret, _ := com.dm.CallMethod("WriteDoubleAddr", hwnd, addr, v)
+	defer ret.Clear()
+	return int(ret.Val)
+
+}
+func (com *Dmsoft) WriteFloat(hwnd int, addr string, v float32) int {
+	ret, _ := com.dm.CallMethod("WriteFloat", hwnd, addr, v)
+	defer ret.Clear()
+	return int(ret.Val)
+
+}
+func (com *Dmsoft) WriteFloatAddr(hwnd int, addr int64, v float32) int {
+	ret, _ := com.dm.CallMethod("WriteFloatAddr", hwnd, addr, v)
+	defer ret.Clear()
+	return int(ret.Val)
+
+}
+func (com *Dmsoft) WriteInt(hwnd int, addr string, typ int, v int64) int {
+	ret, _ := com.dm.CallMethod("WriteInt", hwnd, addr, typ, v)
+	defer ret.Clear()
+	return int(ret.Val)
+
+}
+func (com *Dmsoft) WriteIntAddr(hwnd int, addr int64, typ int, v int64) int {
+	ret, _ := com.dm.CallMethod("WriteIntAddr", hwnd, addr, typ, v)
+	defer ret.Clear()
+	return int(ret.Val)
+
+}
+func (com *Dmsoft) WriteString(hwnd int, addr string, typ int, v string) int {
+	ret, _ := com.dm.CallMethod("WriteString", hwnd, addr, typ, v)
+	defer ret.Clear()
+	return int(ret.Val)
+
+}
+func (com *Dmsoft) WriteStringAddr(hwnd int, addr int64, typ int, v string) int {
+	ret, _ := com.dm.CallMethod("WriteStringAddr", hwnd, addr, typ, v)
+	defer ret.Clear()
+	return int(ret.Val)
+
+}
