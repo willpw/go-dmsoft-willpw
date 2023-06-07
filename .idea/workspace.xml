@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2f4889c-31d5-4949-a2af-ac3c0298aeb5" name="变更" comment="变更">
-      <change beforePath="$PROJECT_DIR$/.idea/go-dmsoft@v1.1.0.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/go-dmsoft.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dmsoft.go" beforeDir="false" afterPath="$PROJECT_DIR$/dmsoft.go" afterDir="false" />
-    </list>
+    <list default="true" id="c2f4889c-31d5-4949-a2af-ac3c0298aeb5" name="变更" comment="变更" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
