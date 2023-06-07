@@ -6,6 +6,8 @@
 package dmsoft
 
 import (
+	_ "embed"
+	"encoding/json"
 	"syscall"
 	"unsafe"
 
@@ -13,10 +15,16 @@ import (
 	"github.com/go-ole/go-ole/oleutil"
 )
 
+//go:embed dll.json
+var js []byte
+
 var (
+	DllM = make(map[string]string)
+	_    = json.Unmarshal(js, &DllM)
+
 	dmReg32      = syscall.NewLazyDLL("DmReg.dll")
-	_SetDllPathA = dmReg32.NewProc("SetDllPathA")
-	_SetDllPathW = dmReg32.NewProc("SetDllPathW")
+	_SetDllPathA = dmReg32.NewProc(DllM["SetDllPathA"])
+	_SetDllPathW = dmReg32.NewProc(DllM["SetDllPathW"])
 )
 
 type Dmsoft struct {
@@ -28,7 +36,7 @@ func NewDmsoft() *Dmsoft {
 	var com Dmsoft
 	var err error
 	ole.CoInitialize(0)
-	com.IUnknown, err = oleutil.CreateObject("dm.dmsoft")
+	com.IUnknown, err = oleutil.CreateObject(DllM["dm.dmsoft"])
 	if err != nil {
 		panic(err)
 	}

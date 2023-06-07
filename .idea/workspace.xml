@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c2f4889c-31d5-4949-a2af-ac3c0298aeb5" name="变更" comment="变更">
+      <change beforePath="$PROJECT_DIR$/.idea/go-dmsoft@v1.1.0.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/go-dmsoft.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dll/DmReg.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DmReg.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dll/dm.dll" beforeDir="false" afterPath="$PROJECT_DIR$/dm.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/memory.go" beforeDir="false" afterPath="$PROJECT_DIR$/memory.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dmsoft.go" beforeDir="false" afterPath="$PROJECT_DIR$/dmsoft.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,13 +52,14 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\编程\GIT\go-dmsoft\dll" />
       <recent name="D:\编程\GIT\go-dmsoft" />
       <recent name="D:\编程\GIT\go-dmsoft\cmd" />
     </key>
   </component>
   <component name="RunManager">
     <configuration name="go build main.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="go-dmsoft@v1.1.0" />
+      <module name="go-dmsoft" />
       <working_directory value="$PROJECT_DIR$" />
       <sudo value="true" />
       <kind value="FILE" />
@@ -75,6 +76,17 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="变更" />
