@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/qianniancn/go-dmsoft"
+	"github.com/willpw/go-dmsoft-willpw"
 	"log"
 	"os"
 	"unsafe"
