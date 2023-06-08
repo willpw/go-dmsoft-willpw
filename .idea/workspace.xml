@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c2f4889c-31d5-4949-a2af-ac3c0298aeb5" name="变更" comment="变更" />
+    <list default="true" id="c2f4889c-31d5-4949-a2af-ac3c0298aeb5" name="变更" comment="变更">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/answer.go" beforeDir="false" afterPath="$PROJECT_DIR$/answer.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asm.go" beforeDir="false" afterPath="$PROJECT_DIR$/asm.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend.go" beforeDir="false" afterPath="$PROJECT_DIR$/backend.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/base.go" beforeDir="false" afterPath="$PROJECT_DIR$/base.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphicColor.go" beforeDir="false" afterPath="$PROJECT_DIR$/graphicColor.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/memory.go" beforeDir="false" afterPath="$PROJECT_DIR$/memory.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mouseKey.go" beforeDir="false" afterPath="$PROJECT_DIR$/mouseKey.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ocr.go" beforeDir="false" afterPath="$PROJECT_DIR$/ocr.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/other.go" beforeDir="false" afterPath="$PROJECT_DIR$/other.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system.go" beforeDir="false" afterPath="$PROJECT_DIR$/system.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/windows.go" beforeDir="false" afterPath="$PROJECT_DIR$/windows.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +31,7 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
